@@ -1,0 +1,22 @@
+{
+  "name": "tverrfaglig-ukesoppgave",
+  "version": "1.0.0",
+  "description": "Et nettsted som dokumenterer et selvvalgt autentiseringsrammeverk og demonstrerer hvordan det virker.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Torgron/Tverrfaglig-Ukesoppgave.git"
+  },
+  "author": "Tor Grønås",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Torgron/Tverrfaglig-Ukesoppgave/issues"
+  },
+  "homepage": "https://github.com/Torgron/Tverrfaglig-Ukesoppgave#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
