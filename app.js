@@ -7,10 +7,12 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(express.static("Public"));
+app.use(express.static("views"));
 
 const session = require("express-session");
-const { redirect } = require("express/lib/response");
+
+app.use('/css', express.static('node_modules/bootstrap/dist/css'));
+app.use('/js', express.static('node_modules/bootstrap/dist/js'));
 
 passport.use(new GoogleStrategy({
     clientID:     process.env.GOOGLE_CLIENT_ID,
@@ -40,6 +42,14 @@ passport.deserializeUser(function(obj, cb) {
 app.use(passport.initialize());
 app.use(passport.session());
 
+function loggedIn(req, res, next) {
+    if (req.user) {
+        next();
+    } else {
+        res.redirect('/auth/google/failure');
+    }
+}
+
 app.get("/", (req, res) => {
     res.render("index");
 });
@@ -56,11 +66,11 @@ app.get("/auth/google",
 app.get("/auth/google/callback",
     passport.authenticate( "google", {
         successRedirect: "/auth/google/success",
-        failureRedirect: "/auth/google/failure"
+        failureRedirect: "/"
 }));
 
-app.get("/auth/google/success", (req, res) => {
-    res.render("success")
+app.get("/auth/google/success", loggedIn, (req, res) => {
+    res.render("success", {displayName: req.user.displayName})
 });
 
 app.post("/auth/google/success", (req, res) => {

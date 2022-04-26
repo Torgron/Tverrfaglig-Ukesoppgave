@@ -4,11 +4,42 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Success</title>
+        <title>Tverrfaglig Ukesoppgave</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles/styles.css">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
     </head>
     <body>
-        <form action="/auth/google/success" method="post">
-            <button type="submit">Logout</button>
-        </form>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/auth/google/success">OAuth</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Hjem</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sikkerhet</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <form action="/auth/google/success" method="post">
+                            <button type="submit" class="btn btn-outline-dark"><img width="30px" style="margin-bottom: 3px; margin-right: 5px;" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                                Logout
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+        <h1 id="welcomeMessage">Velkommen <%= displayName %>!</h1>
+
     </body>
 </html>
