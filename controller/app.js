@@ -99,5 +99,4 @@ const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, function(){
     console.log("Server is running on port 8080.");
-    console.log(process.env.GOOGLE_CLIENT_ID);
 });
