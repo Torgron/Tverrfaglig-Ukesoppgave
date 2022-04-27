@@ -1,5 +1,5 @@
 const dotenv = require("dotenv");
-dotenv.config({ path: '/../.env' });
+dotenv.config({ path: '../.env' });
 const express = require("express");
 const passport = require("passport");
 const GoogleStrategy = require( "passport-google-oauth2" ).Strategy;
