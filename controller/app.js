@@ -1,5 +1,5 @@
 const dotenv = require("dotenv");
-dotenv.config({ path: '../.env' });
+dotenv.config({ path: '/../.env' });
 const express = require("express");
 const passport = require("passport");
 const GoogleStrategy = require( "passport-google-oauth2" ).Strategy;
@@ -18,7 +18,7 @@ app.use("/styles", express.static("../views/styles"));
 app.use("/css", express.static("../node_modules/bootstrap/dist/css"));
 app.use("/js", express.static("../node_modules/bootstrap/dist/js"));
 app.use("/js", express.static("../node_modules/jquery/dist"));
-app.use(favicon(__dirname + "/../favicon.ico"));
+app.use(favicon("/../favicon.ico"));
 
 passport.use(new GoogleStrategy({
     clientID:     process.env.GOOGLE_CLIENT_ID,
