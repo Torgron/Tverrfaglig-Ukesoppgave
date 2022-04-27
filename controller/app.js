@@ -21,8 +21,8 @@ app.use("/js", express.static("../node_modules/jquery/dist"));
 app.use(favicon("../views/images/favicon.ico"));
 
 passport.use(new GoogleStrategy({
-    clientID:     process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    clientID:     process.env.GOOGLE_CLIENT_ID || process.env.CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET || process.env.CLIENT_SECRET,
     callbackURL: "/auth/google/callback",
     passReqToCallback   : true
     },
