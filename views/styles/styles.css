@@ -33,16 +33,22 @@
 }
 
 #securityTextCard .card-header h5 {
-    font-size: 11vw;
+    font-size: 5vw;
 }
 
 #securityTextCard .card-body p {
-    font-size: 7vw;
+    font-size: 3.6vw;
 }
 
-@media screen and (min-width: 420px) {
+@media screen and (min-width: 992px) {
+    #securityTextCard {
+        margin: 2vw auto;
+        float: none;
+        width: 60vw;
+    }
+
     #securityTextCard .card-header h5 {
-        font-size: 3rem;
+        font-size: 2.4rem;
     }
     
     #securityTextCard .card-body p {
