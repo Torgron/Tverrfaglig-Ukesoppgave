@@ -1,5 +1,5 @@
 const dotenv = require("dotenv");
-dotenv.config({ path: __dirname + '/../.env' });
+dotenv.config({ path: '/../.env' });
 const express = require("express");
 const passport = require("passport");
 const GoogleStrategy = require( "passport-google-oauth2" ).Strategy;
@@ -99,4 +99,5 @@ const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, function(){
     console.log("Server is running on port 8080.");
+    console.log(process.env.GOOGLE_CLIENT_ID);
 });
