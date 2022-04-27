@@ -1,1 +1,1 @@
-web: node /controller/app.js
+web: node controller/app.js
