@@ -1,20 +1,53 @@
 /* Kort med login-knapp og tekst */
 #loginCard {
-    margin: 30vh auto;
+    margin: 10vw auto;
     float: none;
+    width: 26rem;
 }
 
-.card-body h5 {
+#loginCard .card-body h5 {
     font-size: 2.4rem;
 }
 
-.card-body p {
+#loginCard .card-body p {
     font-size: 1.7rem;
     color: rgb(100, 100, 100);
 }
 
-.card-body button {
+#loginCard .card-body button {
     font-size: 1.8rem;
+}
+
+/* Vellkomstmelding */
+#welcomeMessage {
+    text-align: center;
+    margin-top: 4vh;
+    font-size: 4vw;
+}
+
+/* Kort med tekst for sikkerhetsvurdering */
+#securityTextCard {
+    margin: 2vw auto;
+    float: none;
+    width: 80vw;
+}
+
+#securityTextCard .card-header h5 {
+    font-size: 11vw;
+}
+
+#securityTextCard .card-body p {
+    font-size: 7vw;
+}
+
+@media screen and (min-width: 420px) {
+    #securityTextCard .card-header h5 {
+        font-size: 3rem;
+    }
+    
+    #securityTextCard .card-body p {
+        font-size: 1.7rem;
+    }
 }
 
 /* Navbar */
@@ -24,11 +57,4 @@
 
 .navbar .nav-link {
     font-size: 1.6rem;
-}
-
-/* Vellkomstmelding */
-#welcomeMessage {
-    text-align: center;
-    margin-top: 6%;
-    font-size: 3.4rem;
 }

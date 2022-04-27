@@ -1,18 +1,25 @@
-require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config({ path: '../.env' });
 const express = require("express");
 const passport = require("passport");
-var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
+const GoogleStrategy = require( "passport-google-oauth2" ).Strategy;
+const favicon = require("serve-favicon");
 
 const app = express();
 
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
+
+app.set("views", "../views");
 
 app.use(express.static("views"));
 
 const session = require("express-session");
 
-app.use('/css', express.static('node_modules/bootstrap/dist/css'));
-app.use('/js', express.static('node_modules/bootstrap/dist/js'));
+app.use("/styles", express.static("../views/styles"));
+app.use("/css", express.static("../node_modules/bootstrap/dist/css"));
+app.use("/js", express.static("../node_modules/bootstrap/dist/js"));
+app.use("/js", express.static("../node_modules/jquery/dist"));
+app.use(favicon("../favicon.ico"));
 
 passport.use(new GoogleStrategy({
     clientID:     process.env.GOOGLE_CLIENT_ID,
@@ -24,10 +31,9 @@ passport.use(new GoogleStrategy({
         return done(null, profile);
     }
 ));
-
 app.use(session ({
     resave: false, 
-    saveUnitialized: true, 
+    saveUninitialized: true, 
     secret: "secret"
 }));
 
@@ -46,7 +52,7 @@ function loggedIn(req, res, next) {
     if (req.user) {
         next();
     } else {
-        res.redirect('/auth/google/failure');
+        res.redirect("/");
     }
 }
 
@@ -70,10 +76,20 @@ app.get("/auth/google/callback",
 }));
 
 app.get("/auth/google/success", loggedIn, (req, res) => {
-    res.render("success", {displayName: req.user.displayName})
+    res.render("success", {displayName: req.user.displayName});
 });
 
 app.post("/auth/google/success", (req, res) => {
+    req.session.destroy(() => {
+        res.redirect("/");
+    });
+});
+
+app.get("/auth/google/success/security", loggedIn, (req, res) => {
+    res.render("security");
+});
+
+app.post("/auth/google/success/security", (req, res) => {
     req.session.destroy(() => {
         res.redirect("/");
     });

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tverrfaglig Ukesoppgave</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles/styles.css">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/auth/google/success">OAuth</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/auth/google/success">Hjem</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/auth/google/success/security">Sikkerhet</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <form action="/auth/google/success" method="post">
+                            <button type="submit" class="btn btn-outline-dark"><img width="30px" style="margin-bottom: 3px; margin-right: 5px;" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                                Logout
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+        <div class="card shadow-lg mb-5 bg-white rounded" id="securityTextCard">
+            <div class="card-header text-center">
+                <h5 class="card-title">Sikkerheten til rammeverket</h5>
+            </div>
+            <div class="card-body text-center">
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem quasi nisi eum nesciunt cumque voluptas esse ut quia doloremque alias, doloribus modi ad consequatur voluptatibus error expedita eius eos repudiandae.</p>
+            </div>
+        </div>
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    </body>
+</html>
