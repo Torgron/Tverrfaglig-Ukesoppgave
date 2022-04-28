@@ -1,49 +1,72 @@
 /* Kort med login-knapp og tekst */
 #loginCard {
-    margin: 10vw auto;
-    float: none;
-    width: 26rem;
+    margin: auto;
+    width: 100vw;
 }
 
 #loginCard .card-body h5 {
-    font-size: 2.4rem;
+    font-size: 2rem;
 }
 
 #loginCard .card-body p {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     color: rgb(100, 100, 100);
 }
 
 #loginCard .card-body button {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 992px) {
+    #loginCard {
+        margin: 10vw auto;
+        width: 36rem;
+    }
+    
+    #loginCard .card-body h5 {
+        font-size: 2.4rem;
+    }
+    
+    #loginCard .card-body p {
+        font-size: 1.7rem;
+        color: rgb(100, 100, 100);
+    }
+    
+    #loginCard .card-body button {
+        font-size: 1.8rem;
+    }
 }
 
 /* Vellkomstmelding */
 #welcomeMessage {
     text-align: center;
-    margin-top: 4vh;
-    font-size: 4vw;
+    margin: 4vh 1vw;
+    font-size: 2.5rem;
+}
+
+@media screen and (min-width: 992px) {
+    #welcomeMessage {
+        font-size: 4vw;
+    }
 }
 
 /* Kort med tekst for sikkerhetsvurdering */
 #securityTextCard {
-    margin: 2vw auto;
-    float: none;
-    width: 80vw;
+    margin: auto;
+    width: 100vw;
 }
 
 #securityTextCard .card-header h5 {
-    font-size: 5vw;
+    font-size: 2.3rem;
 }
 
 #securityTextCard .card-body p {
-    font-size: 3.6vw;
+    font-size: 1.2rem;
 }
 
 @media screen and (min-width: 992px) {
     #securityTextCard {
         margin: 2vw auto;
-        float: none;
         width: 60vw;
     }
 
